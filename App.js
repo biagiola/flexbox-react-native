@@ -1,12 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
+//import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar, Platform, Alert, Button, StyleSheet, Text, View, Image, TouchableOpacity, TouchableNativeFeedback} from 'react-native';
+import Part1 from './part1'
+import Part2 from './part2'
 
 export default function App() {
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      {/* <Part1/> */}
+      <Part2/>
     </View>
   );
 }
