@@ -18,8 +18,8 @@ export default function Dimensions() {
       height: landscape ? 250 : 100
     }}>
       <Text>Screen dimensions</Text>     
-    <Text>Width: { width }</Text>
-    <Text>Height: { height }</Text>
+      <Text>Width: { width }</Text>
+      <Text>Height: { height }</Text>
     </View>
   )
 }

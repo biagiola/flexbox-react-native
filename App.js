@@ -5,6 +5,7 @@ import { useDimensions, useDeviceOrientation } from '@react-native-community/hoo
 import Part1 from './part1'
 import Part2 from './part2'
 import Dimensions from './dimentions'
+import FlexBoxesRow from './flexBoxesRow'
 
 export default function App() {
   return (
@@ -25,8 +26,9 @@ export default function App() {
           width: 50,
           height: 50
         }}
-      ></View> */}
-      <Dimensions />
+      ></View> 
+      <Dimensions />*/}
+      <FlexBoxesRow />
     </View>
   );
 }
