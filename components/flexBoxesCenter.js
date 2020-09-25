@@ -1,13 +1,12 @@
 import React from 'react';
-import { View, Text, TextInput, Button,  } from 'react-native';
+import { View, TextInput, Button,  } from 'react-native';
 
 export default function App() {
   return (
     <View style={{ 
-      padding: 35,
       flex: 1, 
       flexDirection: 'row',
-      justifyContent: 'space-between',
+      justifyContent: 'space-around',
       alignItems: 'center' 
     }}>
       <TextInput 
