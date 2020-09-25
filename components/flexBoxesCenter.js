@@ -11,7 +11,7 @@ export default function App() {
     }}>
       <TextInput 
         placeholder='Course Goal'
-        style={{ borderColor: 'black', borderWidth: 1, padding: 10 }}
+        style={{ width: '80%', borderColor: 'black', borderWidth: 1, padding: 10 }}
       />
       <Button title='add' />
     </View> 
