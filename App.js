@@ -1,51 +1,31 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, FlatList, TouchableWitOutOpacity } from 'react-native';
+import GoalItem from './components/GoalItem'
+import GoalInput from './components/GoalInput'
+
 
 export default function App() {
-  const [enteredGoal, setEnteredGoal] = useState('')
   const [courseGoals, setCourseGoals] = useState([])
-  
-  const goalInputHandler = (enteredText) => {
-    setEnteredGoal(enteredText)
-  }
 
-  const addGoalHandler = () => {
+  const addGoalHandler = (enteredGoal) => {
     /* setCourseGoals([...courseGoals, enteredGoal]) */
     /* setCourseGoals(currentGoal => [...courseGoals, enteredGoal]) */
     setCourseGoals(currentGoals => [...currentGoals, 
     { id: Math.random().toString(), value: enteredGoal }
     ])
   }
-
-
-  const deletedGoalHandler = () => {
-
-  }
-
   return (
     <View style={styles.screen}>
-      <View style={styles.inputContainer} >
-        <TextInput 
-          placeholder='Course Goal' 
-          style={styles.input} 
-          onChangeText={goalInputHandler}  
-          value={enteredGoal}
-        />
-        <Button title='add' onPress={addGoalHandler} />
-      </View>
+
+      <GoalInput addGoalHandler={addGoalHandler}/>
 
       <FlatList 
         /*keyExtractor in case we use id insted key value*/
         keyExtractor={(item, index) => item.id}
         data={courseGoals}
-        renderItem={ itemData =>  (
-          <View style={styles.listItem}>
-            <Text>{itemData.item.value}</Text>
-          </View>
-        )}
+        renderItem={ itemData =>  <GoalItem title={itemData.item.value}/>}
       />
         
-      
     </View> 
   )
 }
@@ -66,11 +46,5 @@ const styles = StyleSheet.create({
     padding: 10,
     borderWidth: 1
   },
-  listItem: {
-    padding: 10,
-    marginVertical: 10,
-    backgroundColor: '#ccc',
-    borderColor: 'black',
-    borderWidth: 1
-  }
+  
 })
